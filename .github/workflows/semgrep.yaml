@@ -7,8 +7,8 @@ on:
     - .github/workflows/semgrep.yml
 name: Semgrep Findings
 jobs:
-  semgrep-free:
-    name: Semgrep-free
+  semgrep-sast:
+    name: Semgrep-SAST
     runs-on: ubuntu-20.04
     container:
       image: semgrep/semgrep
@@ -33,9 +33,3 @@ jobs:
               --header "Tenant-Id: {{ secrets.ACCUKNOX_TENANT_ID }}" \
               --header "Authorization: Bearer {{ secrets.ACCUKNOX_TOKEN }}" \
               --form "file=@/tmp/semgrep.json"
-
-    - name: Upload artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: semgrep-report
-        path: /tmp/semgrep.json
