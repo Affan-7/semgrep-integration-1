@@ -19,11 +19,6 @@ jobs:
       env:
           SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
 
-    - name: View the output
-      run: |
-        ls -la /tmp
-        cat /tmp/semgrep.json
-
     - name: Upload report to AccuKnox
       run: |
         curl --location --request POST \
