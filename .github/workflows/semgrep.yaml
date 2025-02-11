@@ -29,7 +29,7 @@ jobs:
     - name: Upload report to AccuKnox
       run: |
         curl --location --request POST \
-        "https://cspm.demo.accuknox.com/api/v1/artifact/?tenant_id=${{ secrets.ACCUKNOX_TENANT_ID }}&data_type=SG&save_to_s3=true&label_id=${{ secrets.ACCUKNOX_LABEL }}" \
+        "https://cspm.stage.accuknox.com/api/v1/artifact/?tenant_id=${{ secrets.ACCUKNOX_TENANT_ID }}&data_type=SG&save_to_s3=true&label_id=${{ secrets.ACCUKNOX_LABEL }}" \
               --header "Tenant-Id: {{ secrets.ACCUKNOX_TENANT_ID }}" \
               --header "Authorization: Bearer {{ secrets.ACCUKNOX_TOKEN }}" \
               --form "file=@/tmp/semgrep.json"
