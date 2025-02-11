@@ -31,7 +31,7 @@ jobs:
         curl --location --request POST \
         "https://cspm.stage.accuknox.com/api/v1/artifact/?tenant_id=${{ secrets.ACCUKNOX_TENANT_ID }}&data_type=SG&save_to_s3=true&label_id=${{ secrets.ACCUKNOX_LABEL }}" \
               --header "Tenant-Id: ${{ secrets.ACCUKNOX_TENANT_ID }}" \
-              --header "Authorization: Bearer {{ secrets.ACCUKNOX_TOKEN }}" \
+              --header "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQxODU2OTU4LCJqdGkiOiJiNzNlNjE3N2ExYmM0NmNlYjMyN2RiMzBlY2E0MjM2YiIsImlzcyI6ImNzcG0uc3RhZ2UuYWNjdWtub3guY29tIn0.PocZyOUZZQzWuYfiZ9PdtQzjQlKn53l2PAIkHy5esViChLrUva0eoUhKajoyQiwgjAKzbDa1O-jAsemvZSPRfAPaFhOykr3NndrfRTiJKPzQxL0wa-iOJ0Z37LJ69DXMogssSFyyPbEoiUAePgFJwKYukhnO7KDTb-fnilPD2_OrJAJq85jnS-3UwUvUVLMWrHBSlwkP7Shi75kvKMXnn2VtWmg6rWmvYAOeh7wbmcWT_zp8ci8t1_Dzq7oa81z-ODsh01DLxO01EzRwT2deVso5s8TfQP4Lb4bkKQftVEjLQaQOblCKS8ZmWyQwLRENYYCVbpW_tzM3kjmqQXVrMQ" \
               --form "file=@/tmp/semgrep.json"
 
     # - name: Upload report to AccuKnox
